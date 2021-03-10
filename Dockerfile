@@ -10,12 +10,12 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY yarn.lock ./
-RUN npm install
-
-ENV PORT=5000
+RUN yarn install
 
 # add app
 COPY . ./
 
+RUN yarn build
+
 # start app
-CMD ["sh", "-c", "echo '34.69.6.250 mythreekit.com' >> /etc/hosts && echo '34.69.6.250 clara.io' >> /etc/hosts && PORT=$PORT yarn start"]
+CMD ["sh", "-c", "echo '34.69.6.250 mythreekit.com' >> /etc/hosts && echo '34.69.6.250 clara.io' >> /etc/hosts && yarn start"]
