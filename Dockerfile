@@ -12,7 +12,7 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN npm install
 
-EXPOSE 5000/tcp
+ENV PORT
 
 # add app
 COPY . ./
