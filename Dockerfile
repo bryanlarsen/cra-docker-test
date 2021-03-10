@@ -18,4 +18,4 @@ ENV PORT=5000
 COPY . ./
 
 # start app
-CMD ["sh", "-c", "echo '34.69.6.250 mythreekit.com' >> /etc/hosts && echo '34.69.6.250 clara.io' >> /etc/hosts && yarn start"]
+CMD ["sh", "-c", "echo '34.69.6.250 mythreekit.com' >> /etc/hosts && echo '34.69.6.250 clara.io' >> /etc/hosts && PORT=$PORT yarn start"]
