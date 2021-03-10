@@ -12,6 +12,8 @@ COPY package.json ./
 COPY yarn.lock ./
 RUN npm install
 
+EXPOSE 5000/tcp
+
 # add app
 COPY . ./
 
